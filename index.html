@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minutas GARVI - Transcriptor IA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Minutas GARVI</h1>
+            <p class="subtitle">Transcripción en tiempo real con generación de PDF</p>
+        </header>
+
+        <div class="conference-info">
+            <div class="form-group">
+                <label for="conference-name">Nombre de la minuta:</label>
+                <input type="text" id="conference-name" placeholder="Ej: Minuta de reunión 2026">
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="btn-start" class="btn btn-primary">
+                <span class="icon">&#9898;</span> Iniciar Grabación
+            </button>
+            <button id="btn-pause" class="btn btn-warning" disabled>
+                <span class="icon">&#9208;</span> Pausar
+            </button>
+            <button id="btn-stop" class="btn btn-danger" disabled>
+                <span class="icon">&#9632;</span> Detener
+            </button>
+            <button id="btn-pdf" class="btn btn-success" disabled>
+                <span class="icon">&#128196;</span> Generar PDF
+            </button>
+            <button id="btn-clear" class="btn btn-secondary">
+                <span class="icon">&#128465;</span> Limpiar Notas
+            </button>
+        </div>
+
+        <div class="status-bar">
+            <span id="status-indicator" class="status-dot"></span>
+            <span id="status-text">Listo para grabar</span>
+            <span id="timer">00:00:00</span>
+        </div>
+
+        <div class="notes-container">
+            <div class="notes-header">
+                <h2>Transcripción</h2>
+                <span id="word-count">0 palabras</span>
+            </div>
+            <div id="notes-content" class="notes-content">
+                <p class="placeholder">La transcripción aparecerá aquí cuando inicies la grabación...</p>
+            </div>
+        </div>
+
+        <div class="interim-text">
+            <span id="interim"></span>
+        </div>
+    </div>
+
+    <footer>
+        <p>Minutas GARVI v1.0 | Usa Chrome o Edge para mejor compatibilidad</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
